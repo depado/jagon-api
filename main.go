@@ -37,7 +37,7 @@ func main() {
 		apir.POST("/confess", jagon.Confess)
 		apir.POST("/sacrifice", jagon.DoSacrifice)
 		apir.GET("/info/prophet", jagon.Prophet)
-		apir.GET("/info/apostles", jagon.Apostotles)
+		apir.GET("/info/apostles", jagon.Apostles)
 	}
 	r.Run(":" + strconv.Itoa(conf.C.Port))
 }

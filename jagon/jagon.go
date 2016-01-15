@@ -34,10 +34,13 @@ func Prophet(c *gin.Context) {
 	})
 }
 
-// Apostotles gives some information about the current apostotles.
-func Apostotles(c *gin.Context) {
+// Apostles gives some information about the current apostotles.
+func Apostles(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{
-		"current": []gin.H{gin.H{"name": "Hekmon", "alive": true}},
+		"current": []gin.H{
+			gin.H{"name": "Hekmon", "alive": true, "location": "In a dark underground temple, accompanied by a dwarf, an elf and a Shiba Inu."},
+			gin.H{"name": "Thonain", "alive": true, "location": "In the back of a seedy, dark and smelly alley, right near a drunk's vomit from last night."},
+		},
 	})
 }
 
