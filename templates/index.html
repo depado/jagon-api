@@ -202,7 +202,27 @@
                 $('.button-collapse').sideNav();
             });
         })(jQuery);
+            var _paq = _paq || [];
+        _paq.push(['trackPageView']);
+        _paq.push(['enableLinkTracking']);
+        (function() {
+            var u = "http://analytics.depado.eu/";
+            _paq.push(['setTrackerUrl', u + 'mypi.php']);
+            _paq.push(['setSiteId', 9]);
+            var d = document,
+                g = d.createElement('script'),
+                s = d.getElementsByTagName('script')[0];
+            g.type = 'text/javascript';
+            g.async = true;
+            g.defer = true;
+            g.src = u + 'mypi.js';
+            s.parentNode.insertBefore(g, s);
+        })();
+
     </script>
+    <noscript>
+        <p><img src="http://analytics.depado.eu/piwik.php?idsite=9" style="border:0;" alt="" /></p>
+    </noscript>
 
 </body>
 
