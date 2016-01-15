@@ -1,8 +1,11 @@
 package main
 
 import (
+	"log"
 	"net/http"
+	"strconv"
 
+	"github.com/Depado/jagon-api/conf"
 	"github.com/Depado/jagon-api/jagon"
 	"github.com/gin-gonic/gin"
 )
@@ -10,7 +13,15 @@ import (
 const version = "1"
 
 func main() {
-	gin.SetMode(gin.ReleaseMode)
+	var err error
+
+	if err = conf.Load("conf.yml"); err != nil {
+		log.Fatal(err)
+	}
+
+	if !conf.C.Debug {
+		gin.SetMode(gin.ReleaseMode)
+	}
 	r := gin.Default()
 	r.Static("/static", "./assets")
 	r.LoadHTMLGlob("./templates/*")
@@ -28,5 +39,5 @@ func main() {
 		apir.GET("/info/prophet", jagon.Prophet)
 		apir.GET("/info/apostles", jagon.Apostotles)
 	}
-	r.Run(":8080")
+	r.Run(":" + strconv.Itoa(conf.C.Port))
 }
