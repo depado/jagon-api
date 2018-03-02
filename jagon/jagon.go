@@ -41,6 +41,7 @@ func Apostles(c *gin.Context) {
 			gin.H{"name": "Hekmon", "alive": true, "location": "In a dark underground temple, accompanied by a dwarf, an elf and a Shiba Inu."},
 			gin.H{"name": "Thonain", "alive": true, "location": "In the back of a seedy, dark and smelly alley, right near a drunk's vomit from last night."},
 			gin.H{"name": "Grovek", "alive": true, "location": "In the fresh forest of Ubud, living in a mushroom-like stone house."},
+			gin.H{"name": "Shada", "alive": true, "location": "In a castle built from sand near the ocean, the castle is somewhat indestructible."},
 		},
 	})
 }
